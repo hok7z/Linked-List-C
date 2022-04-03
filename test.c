@@ -7,10 +7,10 @@ int main(void) {
 
     list_t *list = newList();
     
-    addElement(list,"Alisa");
-    addElement(list,"Bob");
-    addElement(list,"Julia");
-    addElement(list,"Mycha");
+    appendElement(list,"Alisa");
+    appendElement(list,"Bob");
+    appendElement(list,"Julia");
+    appendElement(list,"Mycha");
 
     displayList(list);
 
@@ -22,4 +22,3 @@ int main(void) {
 
     return 0;
 }
-

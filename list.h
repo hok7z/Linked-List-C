@@ -12,7 +12,7 @@ extern void destroyList(list_t *);
 extern node_t *getElement(list_t *,size_t);
 extern size_t getLenghtList(list_t*);
 
-extern void addElement(list_t *,char *);
+extern void appendElement(list_t *,char *);
 extern void deleteElement(list_t *,size_t);
 extern void insertElement(list_t *,char *,size_t);
 extern void displayList(list_t *);

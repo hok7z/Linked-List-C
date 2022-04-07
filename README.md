@@ -37,20 +37,20 @@ Free used memory `list`.
 ### node_t *getElement(list_t *list,size_t index) 
 Get element at `index` into `list`.
 
-### getLenghtList(list_t *list)
+### size_t getLenghtList(list_t *list)
 Return number of items in `list`. 
 
-### appendElement(list_t *list,char *data)  
+### void appendElement(list_t *list,char *data)  
 Add new `data` into end `list`.
 
-### deleteElement(list_t *list,size_t index) 
+### void deleteElement(list_t *list,size_t index) 
 Delete item at `index` in `list`.
 
-### insertElement(list_t *list,char *data,size_t index)  
+### void insertElement(list_t *list,char *data,size_t index)  
 Insert `data` at `index` in `list`.
 
-### rewriteElement(list_t *list,char *data,size_t index ) 
+### void rewriteElement(list_t *list,char *data,size_t index ) 
 Rewrite `data` at `index` in `list`. 
 
-### displayList(list_t *list)  
+### void displayList(list_t *list)  
 Display items into `list`

@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include "list.h"
 
-int main(void) {
-    
+int main(void) { 
     printf("List data type\n");
 
     list_t *list = newList();

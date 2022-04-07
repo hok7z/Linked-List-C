@@ -1,15 +1,56 @@
 # Linked list in C
 
-newList(void)         - create new list 
-destroyList(list_t*)  - destroy list
+Is an implementation of a linked list in C.
 
-getElement(list_t *,size_t) - get element from list
-getLenghtList(list_t*)      - get number of elements in list
+```c
+#include <stdio.h>
+#include "list.h"
 
-appendElement(list_t*,char*)  - add element to end list
-deleteElement(list_t*,size_t) - delete element from list 
+int main (void)
+{ 
+    list_t *list = newList();
+    
+    appendElement(list,"Alisa");
+    appendElement(list,"Bob");
+    appendElement(list,"Julia");
+    appendElement(list,"Mycha");
 
-insertElement(list_t*,char*,size_t)  - insert element to index list
-rewriteElement(list_t*,char*,size_t) - rewrite element to index list
+    displayList(list);
 
-displayList(list_t*)          - display elements list
+    rewriteElement(list,"John",3);
+    displayList(list);
+    
+    destroyList(list);
+
+    return 0;
+}
+```
+
+## API
+
+### list_t *newList() 
+Create new list.This function returns a pointer to the list.
+
+### list_t *destroyList(list_t *list) 
+Free used memory `list`
+
+### node_t *getElement(list_t *list,size_t index) 
+Get element index `index` into `list`.
+
+### getLenghtList(list_t *list)
+Return number of items in `list`. 
+
+### appendElement(list_t *list,char *data)  
+Add new `data` into end `list`
+
+### deleteElement(list_t *list,size_t index) 
+Delete item at `index` in `list`
+
+### insertElement(list_t *list,char *data,size_t index)  
+Insert `data` into `list` at `index`
+
+### rewriteElement(list_t *list,char *data,size_t index ) 
+Rewrite `data` at `index` in list 
+
+### displayList(list_t *list)  
+Display items into `list`

@@ -20,4 +20,3 @@ int main(void) {
     destroyList(list);
     return 0;
 }
-

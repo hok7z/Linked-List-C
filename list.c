@@ -64,7 +64,7 @@ extern size_t getLenghtList(list_t *list)
     return count;
 }
 
-extern void addElement(list_t *list,char *data) {
+extern void appendElement(list_t *list,char *data) {
     node_t *current = NULL;
 
     if (list->head == NULL) 

@@ -23,6 +23,15 @@ static node_t *newNode(char *data) {
     return Node;
 }
 
+static void destroyNode(node_t *Node) { 
+    if (!Node)
+        return;
+    Node->data = NULL;
+    Node->next = NULL;
+
+    free(Node);
+}
+
 extern list_t *newList() {
     list_t *List = malloc(sizeof(list_t));
     
@@ -32,6 +41,7 @@ extern list_t *newList() {
     List->head = NULL;
     return List;
 }
+
 
 extern node_t *getElement(list_t *list,size_t index) 
 {
@@ -54,7 +64,7 @@ extern size_t getLenghtList(list_t *list)
     return count;
 }
 
-extern void appendElement(list_t *list,char *data) {
+extern void addElement(list_t *list,char *data) {
     node_t *current = NULL;
 
     if (list->head == NULL) 
@@ -78,17 +88,31 @@ extern void deleteElement(list_t *list,size_t index) {
     prev->next = next_->next;
 }
 
-extern void insertElement(list_t *list,char *data,size_t i) {   
+extern void rewriteElement(list_t *list,char *data,size_t i) {  
+    node_t *new = newNode(data);
+   
+    node_t *prev  = getElement(list,i-1);
+    node_t *next_ = prev->next;
+   
+    if (new == NULL || prev == NULL || next_->next == NULL)
+        return;
+   
+    prev->next = new;
+    new->next = next_->next;
+    destroyNode(next_);
+}
+
+extern void insertElement(list_t *list,char *data,size_t index) {
     node_t *new = newNode(data);
     
-    node_t *prev  = getElement(list,i-1); 
+    node_t *prev = getElement(list,index-1);
     node_t *next_ = prev->next;
-    
-    if (new == NULL || prev == NULL || next_->next == NULL)
+
+    if (!list || prev == NULL || new == NULL)
         return;
     
     prev->next = new;
-    new->next = next_->next;
+    new->next  = next_;
 }
 
 extern void displayList(list_t *list) {    

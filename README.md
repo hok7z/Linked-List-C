@@ -32,25 +32,25 @@ int main (void)
 Create new list.This function returns a pointer to the list.
 
 ### list_t *destroyList(list_t *list) 
-Free used memory `list`
+Free used memory `list`.
 
 ### node_t *getElement(list_t *list,size_t index) 
-Get element index `index` into `list`.
+Get element at `index` into `list`.
 
 ### getLenghtList(list_t *list)
 Return number of items in `list`. 
 
 ### appendElement(list_t *list,char *data)  
-Add new `data` into end `list`
+Add new `data` into end `list`.
 
 ### deleteElement(list_t *list,size_t index) 
-Delete item at `index` in `list`
+Delete item at `index` in `list`.
 
 ### insertElement(list_t *list,char *data,size_t index)  
-Insert `data` into `list` at `index`
+Insert `data` at `index` in `list`.
 
 ### rewriteElement(list_t *list,char *data,size_t index ) 
-Rewrite `data` at `index` in list 
+Rewrite `data` at `index` in `list`. 
 
 ### displayList(list_t *list)  
 Display items into `list`

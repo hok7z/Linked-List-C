@@ -42,7 +42,6 @@ extern list_t *newList() {
     return List;
 }
 
-
 extern node_t *getElement(list_t *list,size_t index) 
 {
     node_t *current = list->head;
@@ -92,32 +91,31 @@ extern void rewriteElement(list_t *list,char *data,size_t i) {
     node_t *new = newNode(data);
    
     node_t *prev  = getElement(list,i-1);
-    node_t *next_ = prev->next;
+    node_t *next = prev->next;
    
-    if (new == NULL || prev == NULL || next_->next == NULL)
+    if (new == NULL || prev == NULL || next->next == NULL)
         return;
    
     prev->next = new;
-    new->next = next_->next;
-    destroyNode(next_);
+    new->next = next->next;
+    destroyNode(next);
 }
 
 extern void insertElement(list_t *list,char *data,size_t index) {
     node_t *new = newNode(data);
     
     node_t *prev = getElement(list,index-1);
-    node_t *next_ = prev->next;
+    node_t *next = prev->next;
 
     if (!list || prev == NULL || new == NULL)
         return;
     
     prev->next = new;
-    new->next  = next_;
+    new->next  = next;
 }
 
 extern void displayList(list_t *list) {    
     node_t *current = list->head;
-
     if (list->head == NULL)
         return;
     for (;current != NULL;current = current->next)
@@ -128,9 +126,10 @@ extern void displayList(list_t *list) {
 
 extern void destroyList(list_t *list) { 
     node_t *current = list->head;
-    node_t *next = current; 
+    node_t *next = current;     
     while(current != NULL) {    
         next = current->next;
-        free(current),current = next;
+        destroyNode(current);
+        current = next;
     }
 }

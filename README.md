@@ -14,7 +14,6 @@ int main (void)
     appendElement(list,"Bob");
     appendElement(list,"Julia");
     appendElement(list,"Mycha");
-
     displayList(list);
 
     rewriteElement(list,"John",3);

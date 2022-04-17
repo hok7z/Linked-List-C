@@ -7,8 +7,7 @@ int main(void) {
     appendElement(list,"Alisa");
     appendElement(list,"Bob");
     appendElement(list,"Julia");
-    appendElement(list,"Mycha");
-    
+    appendElement(list,"Mycha");    
     displayList(list);
 
     destroyList(list);

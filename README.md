@@ -15,10 +15,7 @@ int main (void)
     appendElement(list,"Julia");
     appendElement(list,"Mycha");
     displayList(list);
-
-    rewriteElement(list,"John",3);
-    displayList(list);
-    
+ 
     destroyList(list);
 
     return 0;

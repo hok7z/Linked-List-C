@@ -15,6 +15,7 @@ extern size_t getLenghtList(list_t*);
 extern void appendElement(list_t *,char *);
 extern void deleteElement(list_t *,size_t);
 extern void insertElement(list_t *,char *,size_t);
+extern list_t *rangeElements(list_t *,size_t,size_t);
 extern void rewriteElement(list_t *,char *,size_t);
 extern void displayList(list_t *);
 

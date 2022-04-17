@@ -48,6 +48,9 @@ Delete item at `index` in `list`.
 ### void insertElement(list_t *list,char *data,size_t index)  
 Insert `data` at `index` in `list`.
 
+### list_t *rangeElements(list_t *list,size_t start,size_t end)
+Range items in `list` from start to end
+
 ### void rewriteElement(list_t *list,char *data,size_t index ) 
 Rewrite `data` at `index` in `list`. 
 

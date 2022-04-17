@@ -114,6 +114,15 @@ extern void insertElement(list_t *list,char *data,size_t index) {
     new->next  = next;
 }
 
+extern list_t *rangeElements(list_t *list,size_t start,size_t end) {
+    list_t *newlist = malloc(sizeof(*list));
+    node_t *first = getElement(list,start);
+
+    for (size_t i = start;i < end+1;i++) 
+        appendElement(newlist,getElement(list,i)->data); 
+    return newlist;
+}
+
 extern void displayList(list_t *list) {    
     node_t *current = list->head;
     if (list->head == NULL)

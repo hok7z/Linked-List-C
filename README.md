@@ -2,6 +2,8 @@
 
 Is an implementation of a linked list in C.
 
+![Singly linked list](https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg)
+
 ```c
 #include <stdio.h>
 #include "list.h"
@@ -12,8 +14,6 @@ int main (void)
     
     appendElement(list,"Alisa");
     appendElement(list,"Bob");
-    appendElement(list,"Julia");
-    appendElement(list,"Mycha");
     displayList(list);
  
     destroyList(list);
